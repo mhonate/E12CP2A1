@@ -4,12 +4,17 @@
     <title>Boosass</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="pages.scss">
+
+  </head>
+  
+  <body class="<%= params[:controller]%>">
     <div class="container" style="padding-top: 70px">
     
     </div>
@@ -21,6 +26,7 @@
         <li class="active"><a href="<%= pages_home_path%>">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="<%= pages_about_path%>"> About</a></li>
         <li><a href="<%= products_path%>"> Products</a></li>
+
         
       </ul>
       
@@ -31,6 +37,7 @@
 
     <div class="container">
     <%= yield %>
-  </div>
+    </div>
+  
   </body>
 </html>
